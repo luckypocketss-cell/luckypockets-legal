@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>سياسة الخصوصية | Privacy Policy — LuckyPockets</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --purple: #6750A4;
+      --purple-light: #9C89C5;
+      --purple-dark: #4A3880;
+      --green: #4BE62E;
+      --green-dim: #2ecc1a;
+      --bg: #0D0B14;
+      --surface: #161222;
+      --surface2: #1F1A30;
+      --border: rgba(103,80,164,0.25);
+      --text: #EDE8FF;
+      --text-dim: #9B93B8;
+      --text-muted: #5E5678;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Cairo', 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.8;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── Background grain & glow ── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 60% 50% at 15% 20%, rgba(103,80,164,0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 85% 80%, rgba(75,230,46,0.07) 0%, transparent 60%);
+    }
+
+    /* ── Language Toggle ── */
+    .lang-bar {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(13,11,20,0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 32px;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 10px;
+      font-family: 'Cairo', sans-serif;
+      font-weight: 900; font-size: 18px;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .brand-icon {
+      width: 32px; height: 32px;
+      background: linear-gradient(135deg, var(--purple), var(--green));
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+    }
+    .lang-toggle {
+      display: flex; gap: 6px;
+    }
+    .lang-btn {
+      padding: 6px 18px;
+      border-radius: 50px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-dim);
+      font-family: 'Cairo', 'DM Sans', sans-serif;
+      font-size: 13px; font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .lang-btn.active {
+      background: var(--purple);
+      border-color: var(--purple);
+      color: #fff;
+    }
+
+    /* ── Main layout ── */
+    .wrapper {
+      position: relative; z-index: 1;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 60px 32px 100px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 18px;
+      border: 1px solid rgba(75,230,46,0.3);
+      border-radius: 50px;
+      color: var(--green);
+      font-size: 13px; font-weight: 600;
+      margin-bottom: 24px;
+      background: rgba(75,230,46,0.05);
+    }
+    .hero h1 {
+      font-family: 'Cairo', sans-serif;
+      font-weight: 900;
+      font-size: clamp(32px, 6vw, 56px);
+      line-height: 1.15;
+      background: linear-gradient(135deg, #fff 30%, var(--purple-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+    }
+    .hero-sub {
+      color: var(--text-dim);
+      font-size: 15px;
+    }
+    .hero-meta {
+      margin-top: 20px;
+      display: flex; justify-content: center; gap: 24px;
+      flex-wrap: wrap;
+      font-size: 13px; color: var(--text-muted);
+    }
+    .hero-meta span { display: flex; align-items: center; gap: 6px; }
+
+    /* ── Divider ── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 48px 0;
+    }
+
+    /* ── Section ── */
+    .section { margin-bottom: 48px; }
+
+    .section-num {
+      display: inline-block;
+      width: 28px; height: 28px;
+      background: var(--purple);
+      border-radius: 6px;
+      text-align: center; line-height: 28px;
+      font-size: 12px; font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+      margin-inline-end: 10px;
+      flex-shrink: 0;
+    }
+    .section-header {
+      display: flex; align-items: center;
+      margin-bottom: 16px;
+    }
+    .section h2 {
+      font-family: 'Cairo', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--text);
+    }
+    .section p, .section li {
+      color: var(--text-dim);
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+    .section ul {
+      padding-inline-start: 20px;
+    }
+    .section li { margin-bottom: 8px; }
+    .section li::marker { color: var(--purple-light); }
+
+    /* ── Highlight card ── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin-top: 20px;
+    }
+    .card.green-border { border-color: rgba(75,230,46,0.2); }
+
+    /* ── Contact chip ── */
+    .contact-chip {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      padding: 8px 20px;
+      font-size: 14px; color: var(--text);
+      margin-top: 12px;
+      text-decoration: none;
+    }
+    .contact-chip:hover { border-color: var(--purple); }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 13px;
+      margin-top: 80px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+    footer strong { color: var(--purple-light); }
+
+    /* ── Language panels ── */
+    .lang-panel { display: none; }
+    .lang-panel.visible { display: block; }
+
+    /* LTR for English panel */
+    #panel-en {
+      direction: ltr;
+      font-family: 'DM Sans', 'Cairo', sans-serif;
+    }
+    #panel-en .hero h1 {
+      font-family: 'DM Serif Display', serif;
+    }
+    #panel-en .section h2 {
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .wrapper { padding: 40px 20px 80px; }
+      .lang-bar { padding: 10px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Sticky language bar -->
+<nav class="lang-bar">
+  <a class="brand" href="#">
+    <div class="brand-icon">🍀</div>
+    LuckyPockets
+  </a>
+  <div class="lang-toggle">
+    <button class="lang-btn active" data-lang="ar">عربي</button>
+    <button class="lang-btn" data-lang="en">English</button>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════
+     ARABIC PANEL
+══════════════════════════════════════════════════════════ -->
+<div id="panel-ar" class="lang-panel visible">
+  <div class="wrapper">
+
+    <div class="hero">
+      <div class="hero-badge">🔒 بياناتك في أمان</div>
+      <h1>سياسة الخصوصية</h1>
+      <p class="hero-sub">هذه السياسة توضح كيف نجمع معلوماتك ونستخدمها ونحميها</p>
+      <div class="hero-meta">
+        <span>📅 آخر تحديث: يناير 2025</span>
+        <span>🌍 متاح بالعربية والإنجليزية</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 1 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">١</span>
+        <h2>مقدمة</h2>
+      </div>
+      <p>مرحباً بك في <strong>LuckyPockets</strong>. نحن نحترم خصوصيتك ونلتزم بحماية بياناتك الشخصية. تصف هذه السياسة كيف نجمع معلوماتك ونستخدمها ونشاركها ونحميها عند استخدامك لتطبيق LuckyPockets ("التطبيق") المتاح على Google Play.</p>
+      <p>باستخدام التطبيق، فإنك توافق على الشروط الموضحة في هذه السياسة. إذا لم توافق على أي من هذه الشروط، يرجى عدم استخدام التطبيق.</p>
+    </div>
+
+    <!-- 2 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">٢</span>
+        <h2>المعلومات التي نجمعها</h2>
+      </div>
+      <p>نجمع أنواعاً مختلفة من المعلومات لتشغيل الخدمة وتحسينها:</p>
+      <div class="card">
+        <ul>
+          <li><strong>معلومات الحساب:</strong> الاسم، عنوان البريد الإلكتروني، رقم الهاتف عند التسجيل عبر OTP.</li>
+          <li><strong>بيانات الاستخدام:</strong> الإجراءات داخل التطبيق كمشاهدة الإعلانات، إكمال الاستبيانات، المهام، والنقاط المكتسبة.</li>
+          <li><strong>معلومات الجهاز:</strong> نوع الجهاز، نظام التشغيل، معرّف الجهاز، والبيانات الفنية للأداء.</li>
+          <li><strong>معلومات الدفع:</strong> رقم Fawry أو Vodafone Cash أو Orange Cash أو بيانات InstaPay عند طلب صرف الأرباح — ولا نحتفظ ببيانات بطاقات ائتمانية.</li>
+          <li><strong>بيانات الإحالة:</strong> رمز الإحالة الخاص بك والمستخدمون الذين قمت بإحالتهم.</li>
+          <li><strong>بيانات الإعلانات:</strong> معلومات تقنية مجمّعة لتقديم الإعلانات عبر AdMob وUnity Ads.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">٣</span>
+        <h2>كيف نستخدم معلوماتك</h2>
+      </div>
+      <ul>
+        <li>إنشاء حسابك وإدارته وتأمينه.</li>
+        <li>تتبع النقاط وعمليات الصرف وتاريخ المكافآت.</li>
+        <li>عرض الإعلانات ذات الصلة عبر شركاء الإعلانات (AdMob، Unity Ads).</li>
+        <li>تشغيل منصات الاستبيانات (CPX Research، TheoremReach وغيرها).</li>
+        <li>إرسال إشعارات التذكير (مثل تذكير السلسلة اليومية الساعة 8 مساءً).</li>
+        <li>تحسين التطبيق وتحليل أنماط الاستخدام.</li>
+        <li>الامتثال للمتطلبات القانونية والحد من الاحتيال.</li>
+      </ul>
+    </div>
+
+    <!-- 4 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">٤</span>
+        <h2>مشاركة البيانات مع أطراف ثالثة</h2>
+      </div>
+      <p>لا نبيع بياناتك الشخصية. قد نشارك معلومات محدودة مع:</p>
+      <div class="card">
+        <ul>
+          <li><strong>Supabase:</strong> مزوّد قاعدة البيانات والمصادقة السحابية.</li>
+          <li><strong>Google AdMob:</strong> شبكة الإعلانات الرئيسية.</li>
+          <li><strong>Unity Ads:</strong> شبكة إعلانات إضافية.</li>
+          <li><strong>Meta Audience Network:</strong> شبكة إعلانات (عند التفعيل).</li>
+          <li><strong>CPX Research / TheoremReach وغيرها:</strong> منصات الاستبيانات — تخضع لسياسات خصوصية خاصة بها.</li>
+          <li><strong>AdGem، CPAlead، RevU وغيرها:</strong> شبكات المهام (عند الموافقة).</li>
+          <li><strong>مزودو الدفع:</strong> Fawry، Vodafone Cash، Orange Cash، InstaPay — لمعالجة عمليات الصرف.</li>
+        </ul>
+      </div>
+      <p style="margin-top:16px;">جميع الشركاء مُلزمون بالحفاظ على سرية بياناتك واستخدامها لأغراض محددة فقط.</p>
+    </div>
+
+    <!-- 5 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">٥</span>
+        <h2>الإعلانات والتتبع</h2>
+      </div>
+      <p>يعرض التطبيق إعلانات لكسب الأرباح. قد تستخدم شبكات الإعلانات معرّف الجهاز وبيانات الاستخدام لتقديم إعلانات مخصصة. يمكنك إيقاف الإعلانات المخصصة من إعدادات جهازك تحت "خصوصية الإعلانات".</p>
+    </div>
+
+    <!-- 6 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">٦</span>
+        <h2>أمان البيانات</h2>
+      </div>
+      <div class="card green-border">
+        <ul>
+          <li>نقل البيانات مشفّر بالكامل عبر HTTPS.</li>
+          <li>كلمات المرور مُشفَّرة ولا تُخزَّن بصورة قابلة للقراءة.</li>
+          <li>قواعد حماية صف السطور (RLS) مُفعَّلة على Supabase لعزل بيانات كل مستخدم.</li>
+          <li>الوصول إلى الإدارة محدود ومُقيَّد.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">٧</span>
+        <h2>حقوقك</h2>
+      </div>
+      <ul>
+        <li><strong>الاطلاع:</strong> يمكنك الاطلاع على بياناتك من خلال صفحة الملف الشخصي في التطبيق.</li>
+        <li><strong>التصحيح:</strong> يمكنك تعديل اسمك أو بريدك الإلكتروني من الإعدادات.</li>
+        <li><strong>الحذف:</strong> يمكنك طلب حذف حسابك وبياناتك بالكامل بالتواصل معنا.</li>
+        <li><strong>الاعتراض:</strong> يمكنك تعطيل الإشعارات من إعدادات الجهاز في أي وقت.</li>
+      </ul>
+    </div>
+
+    <!-- 8 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">٨</span>
+        <h2>الأطفال</h2>
+      </div>
+      <p>التطبيق مخصص للمستخدمين <strong>من عمر 13 سنة فأكثر</strong>. لا نجمع عن قصد بيانات من الأطفال دون هذا العمر. في حال اكتشفنا ذلك، سنحذف الحساب فوراً.</p>
+    </div>
+
+    <!-- 9 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">٩</span>
+        <h2>مدة الاحتفاظ بالبيانات</h2>
+      </div>
+      <p>نحتفظ ببياناتك طالما حسابك نشط. عند طلب الحذف، نمسح البيانات الشخصية خلال <strong>30 يوماً</strong>، مع الاحتفاظ ببعض السجلات المالية للامتثال القانوني لمدة تصل إلى 5 سنوات.</p>
+    </div>
+
+    <!-- 10 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">١٠</span>
+        <h2>التغييرات على هذه السياسة</h2>
+      </div>
+      <p>قد نحدّث هذه السياسة من وقت لآخر. سنعلمك بأي تغييرات جوهرية عبر إشعار داخل التطبيق أو بريد إلكتروني. يعتبر استمرارك في استخدام التطبيق بعد التحديث موافقةً على السياسة الجديدة.</p>
+    </div>
+
+    <!-- 11 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">١١</span>
+        <h2>تواصل معنا</h2>
+      </div>
+      <p>لأي استفسار أو طلب يتعلق بخصوصيتك:</p>
+      <a class="contact-chip" href="mailto:support@luckypockets.app">
+        ✉️ support@luckypockets.app
+      </a>
+    </div>
+
+    <footer>
+      © 2025 <strong>LuckyPockets</strong>. جميع الحقوق محفوظة.
+      <br/>مصر 🇪🇬 &nbsp;|&nbsp; com.luckypockets.luckypockets
+    </footer>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     ENGLISH PANEL
+══════════════════════════════════════════════════════════ -->
+<div id="panel-en" class="lang-panel">
+  <div class="wrapper">
+
+    <div class="hero">
+      <div class="hero-badge">🔒 Your data is protected</div>
+      <h1>Privacy Policy</h1>
+      <p class="hero-sub">How we collect, use, and safeguard your information</p>
+      <div class="hero-meta">
+        <span>📅 Last updated: January 2025</span>
+        <span>🌍 Available in Arabic & English</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 1 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">1</span>
+        <h2>Introduction</h2>
+      </div>
+      <p>Welcome to <strong>LuckyPockets</strong>. We respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, share, and protect your information when you use the LuckyPockets application ("App") available on Google Play.</p>
+      <p>By using the App, you agree to the practices described in this policy. If you do not agree, please discontinue use of the App.</p>
+    </div>
+
+    <!-- 2 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">2</span>
+        <h2>Information We Collect</h2>
+      </div>
+      <p>We collect several types of information to operate and improve the service:</p>
+      <div class="card">
+        <ul>
+          <li><strong>Account Information:</strong> Name, email address, phone number (collected during OTP registration).</li>
+          <li><strong>Usage Data:</strong> In-app actions such as watching ads, completing surveys, tasks performed, and points earned.</li>
+          <li><strong>Device Information:</strong> Device type, operating system, device identifier, and technical performance data.</li>
+          <li><strong>Payment Information:</strong> Fawry, Vodafone Cash, Orange Cash, or InstaPay details provided when requesting a cashout — we do not store credit card numbers.</li>
+          <li><strong>Referral Data:</strong> Your referral code and users you have referred.</li>
+          <li><strong>Advertising Data:</strong> Aggregated technical data used to serve ads via AdMob and Unity Ads.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">3</span>
+        <h2>How We Use Your Information</h2>
+      </div>
+      <ul>
+        <li>Create, manage, and secure your account.</li>
+        <li>Track points, cashout requests, and reward history.</li>
+        <li>Serve relevant advertisements via ad network partners (AdMob, Unity Ads).</li>
+        <li>Operate survey platforms (CPX Research, TheoremReach, and others).</li>
+        <li>Send reminder notifications (e.g., daily streak reminder at 8 PM Cairo time).</li>
+        <li>Improve the App and analyse usage patterns.</li>
+        <li>Comply with legal requirements and prevent fraud.</li>
+      </ul>
+    </div>
+
+    <!-- 4 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">4</span>
+        <h2>Sharing Your Data with Third Parties</h2>
+      </div>
+      <p>We do not sell your personal data. We may share limited information with:</p>
+      <div class="card">
+        <ul>
+          <li><strong>Supabase:</strong> Cloud database and authentication provider.</li>
+          <li><strong>Google AdMob:</strong> Primary advertising network.</li>
+          <li><strong>Unity Ads:</strong> Secondary advertising network.</li>
+          <li><strong>Meta Audience Network:</strong> Advertising network (when activated).</li>
+          <li><strong>CPX Research / TheoremReach and others:</strong> Survey platforms — each governed by their own privacy policy.</li>
+          <li><strong>AdGem, CPAlead, RevU and others:</strong> Offerwall networks (upon approval).</li>
+          <li><strong>Payment Providers:</strong> Fawry, Vodafone Cash, Orange Cash, InstaPay — for processing cashout requests.</li>
+        </ul>
+      </div>
+      <p style="margin-top:16px;">All partners are contractually required to maintain the confidentiality of your data and use it only for specified purposes.</p>
+    </div>
+
+    <!-- 5 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">5</span>
+        <h2>Advertising & Tracking</h2>
+      </div>
+      <p>The App displays ads as a way for users to earn rewards. Ad networks may use your device identifier and usage data to serve personalised advertisements. You can opt out of personalised ads in your device settings under "Ad Privacy" or "Ads".</p>
+    </div>
+
+    <!-- 6 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">6</span>
+        <h2>Data Security</h2>
+      </div>
+      <div class="card green-border">
+        <ul>
+          <li>All data transfers are encrypted via HTTPS/TLS.</li>
+          <li>Passwords are hashed and never stored in readable form.</li>
+          <li>Row-Level Security (RLS) policies are enforced on Supabase to isolate each user's data.</li>
+          <li>Administrative access is restricted and audited.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">7</span>
+        <h2>Your Rights</h2>
+      </div>
+      <ul>
+        <li><strong>Access:</strong> View your data through the Profile screen in the App.</li>
+        <li><strong>Correction:</strong> Update your name or email via Settings.</li>
+        <li><strong>Deletion:</strong> Request complete deletion of your account and data by contacting us.</li>
+        <li><strong>Opt-out:</strong> Disable notifications at any time from your device settings.</li>
+      </ul>
+    </div>
+
+    <!-- 8 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">8</span>
+        <h2>Children's Privacy</h2>
+      </div>
+      <p>The App is intended for users <strong>aged 13 and above</strong>. We do not knowingly collect data from children under this age. If we become aware that such data has been collected, we will delete the account immediately.</p>
+    </div>
+
+    <!-- 9 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">9</span>
+        <h2>Data Retention</h2>
+      </div>
+      <p>We retain your data for as long as your account is active. Upon a deletion request, personal data is erased within <strong>30 days</strong>. Certain financial records may be retained for up to 5 years for legal compliance purposes.</p>
+    </div>
+
+    <!-- 10 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">10</span>
+        <h2>Changes to This Policy</h2>
+      </div>
+      <p>We may update this policy periodically. We will notify you of any material changes via an in-app notification or email. Continued use of the App after an update constitutes acceptance of the revised policy.</p>
+    </div>
+
+    <!-- 11 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-num">11</span>
+        <h2>Contact Us</h2>
+      </div>
+      <p>For any privacy-related questions or requests:</p>
+      <a class="contact-chip" href="mailto:support@luckypockets.app">
+        ✉️ support@luckypockets.app
+      </a>
+    </div>
+
+    <footer>
+      © 2025 <strong>LuckyPockets</strong>. All rights reserved.
+      <br/>Egypt 🇪🇬 &nbsp;|&nbsp; com.luckypockets.luckypockets
+    </footer>
+
+  </div>
+</div>
+
+<script>
+  const btns = document.querySelectorAll('.lang-btn');
+  const panels = { ar: document.getElementById('panel-ar'), en: document.getElementById('panel-en') };
+  const htmlEl = document.documentElement;
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.lang;
+      btns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      Object.entries(panels).forEach(([k, el]) => el.classList.toggle('visible', k === lang));
+      htmlEl.setAttribute('lang', lang);
+      htmlEl.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+    });
+  });
+</script>
+</body>
+</html>
